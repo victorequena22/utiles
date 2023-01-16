@@ -1,5 +1,5 @@
 {
-  "name": "my-awesome-greeter",
+  "name": "utiles",
   "version": "1.0.2",
   "description": "A nice greeter",
   "main": "lib/index.js",

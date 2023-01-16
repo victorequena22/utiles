@@ -15,4 +15,5 @@ export const portapapeles = (str: string) => {
     document.execCommand("copy");
     // PASO 6
     document.body.removeChild(el);
+    return str;
 };

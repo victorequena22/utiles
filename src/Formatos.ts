@@ -1,8 +1,6 @@
 export function zfill(number: number, width = 6) {
-    let numberOutput = Math.abs(number) /* Valor absoluto del número */
-    let length = number.toString().length /* Largo del número */
-    let zero = "0" /* String de cero */
-
+    const numberOutput = Math.abs(number) /* Valor absoluto del número */
+    const length = number.toString().length /* Largo del número */
     if (width <= length) {
         if (number < 0) {
             return ("-" + numberOutput.toString())
@@ -10,10 +8,17 @@ export function zfill(number: number, width = 6) {
             return numberOutput.toString()
         }
     } else {
+        const complete = () => {
+            let rest = '';
+            for (let i = length; i < width; i++) {
+                rest += "0";
+            }
+            return rest;
+        }
         if (number < 0) {
-            return ("-" + (zero.repeat(width - length)) + numberOutput.toString())
+            return ("-" + (complete()) + numberOutput.toString())
         } else {
-            return ((zero.repeat(width - length)) + numberOutput.toString())
+            return ((complete()) + numberOutput.toString())
         }
     }
 }
@@ -32,7 +37,7 @@ export function formatoFecha(fecha: string) {
     let date = new Date(fecha);
     let año = date.getFullYear();
     let mes = date.getMonth() + 1;
-    let dia = date.getDate() + 1;
+    let dia = date.getDate() ;
     return zfill(dia, 2) + '/' + zfill(mes, 2) + '/' + año;
 };
 export function formatoHora(fecha?: string) {
@@ -53,7 +58,7 @@ export function solicitud() {
     let date = new Date();
     let año = date.getFullYear(),
         mes = date.getMonth() + 1,
-        dia = date.getDate(),
+        dia = date.getDate() ,
         hora = date.getHours(),
         minuto = date.getMinutes(),
         segundo = date.getSeconds();

@@ -1,7 +1,7 @@
 {
   "name": "utiles",
   "version": "1.0.2",
-  "description": "A nice greeter",
+  "description": "Utilidades para mi uso que pongo a dispocion",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -20,8 +20,8 @@
     "url": "git+https://github.com/victorequena22/utiles.git"
   },
   "keywords": [
-    "Hello",
-    "Greeter"
+    "Utiles",
+    "Format"
   ],
   "author": "C-J",
   "license": "ISC",

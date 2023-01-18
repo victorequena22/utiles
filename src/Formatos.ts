@@ -37,7 +37,7 @@ export function formatoFecha(fecha: string) {
     let date = new Date(fecha);
     let año = date.getFullYear();
     let mes = date.getMonth() + 1;
-    let dia = date.getDate() ;
+    let dia = date.getDate() + 1;
     return zfill(dia, 2) + '/' + zfill(mes, 2) + '/' + año;
 };
 export function formatoHora(fecha?: string) {
@@ -58,7 +58,7 @@ export function solicitud() {
     let date = new Date();
     let año = date.getFullYear(),
         mes = date.getMonth() + 1,
-        dia = date.getDate() ,
+        dia = date.getDate(),
         hora = date.getHours(),
         minuto = date.getMinutes(),
         segundo = date.getSeconds();

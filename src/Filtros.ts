@@ -7,7 +7,7 @@ export function busqueda(itens: any[], encontar: string, bucarLabel: string[], f
             bucarLabel.forEach(label => {
                 let considencias = 0;
                 en.forEach(e => {
-                    if (fechas.some(f => f = label)) {
+                    if (fechas.some(f => f === label)) {
                         if (formatoFecha(iten[label]).indexOf(e) > -1) {
                             considencias++
                         }
@@ -28,7 +28,7 @@ export function busqueda(itens: any[], encontar: string, bucarLabel: string[], f
 }
 export function ordenar(itens: any[], by: string, orden: string, fechas: string[] = []) {
     return itens.sort((a: any, b: any) => {
-        if (fechas.some(f => f = by)) {
+        if (fechas.some(f => f === by)) {
             const fa = fechaToNumber(a[by]), fb = fechaToNumber(b[by])
             if (orden === 'desc') return fb < fa ? -1 : fb > fa ? 1 : 0
             else return fa < fb ? -1 : fa > fb ? 1 : 0

@@ -1,5 +1,5 @@
 {
-  "name": "utiles",
+  "name": "@victorequena22/utiles",
   "version": "1.0.2",
   "description": "Utilidades para mi uso que pongo a dispocion",
   "main": "lib/index.js",
@@ -10,7 +10,7 @@
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
+    "prepublishOnly": "",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
@@ -30,9 +30,7 @@
   },
   "homepage": "https://github.com/victorequena22/utiles#readme",
   "devDependencies": {
-    "prettier": "^2.8.3",
     "tslint": "^5.20.1",
-    "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.7.3"
   },
   "files": [

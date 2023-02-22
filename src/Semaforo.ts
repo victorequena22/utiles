@@ -22,11 +22,14 @@ class Semaforo {
         }
         return false;
     }
+    forceTurn(t: string) {
+        this.index = this.turnos.findIndex(s => s === t);
+    }
     next() {
         this.block = true;
         this.index++;
-        if (this.index >= this.turnos.length) this.index = 0;
+        if (this.index >= this.turnos.length || this.index < 0) this.index = 0;
     }
 }
-var se = new Semaforo();
+const se = new Semaforo();
 export function semaforo() { return se; }

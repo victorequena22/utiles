@@ -1,6 +1,6 @@
 {
   "name": "@victorequena22/utiles",
-  "version": "1.0.2",
+  "version": "1.0.15",
   "description": "Utilidades para mi uso que pongo a dispocion",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -12,8 +12,9 @@
     "prepare": "npm run build",
     "prepublishOnly": "",
     "preversion": "npm run lint",
-    "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
+    "version": "",
+    "postversion": "git push && git push --tags",
+    "publish": "npm publish --access=public"
   },
   "repository": {
     "type": "git",

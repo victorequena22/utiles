@@ -17,3 +17,10 @@ export const portapapeles = (str: string) => {
     document.body.removeChild(el);
     return str;
 };
+
+export function focusId(id: string) {
+    setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el !== null) { el.focus(); }
+    }, 100);
+}

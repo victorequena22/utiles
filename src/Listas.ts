@@ -1,4 +1,4 @@
-import { ordenFecha, ordenString, ordenNumero, buscarTexto } from './Comparaciones';
+import { buscarTexto, ordenFecha, ordenString, ordenNumero } from "./Comparaciones";
 import { formatoFecha, zfill } from "./Formatos";
 export function busqueda(itens: any[], encontar: string, bucarLabel: string[], fechas: string[] = []) {
     if (encontar !== "") {
@@ -24,11 +24,11 @@ export function busqueda(itens: any[], encontar: string, bucarLabel: string[], f
     }
     return itens;
 }
-export function ordenar<p = any>(itens: p[], by: keyof p, orden: 'desc' | 'asc', fechas: (keyof p)[] = []) {
+export function ordenar<p = any>(itens: p[], by: keyof p, orden: "desc" | "asc", fechas: (keyof p)[] = []) {
     return itens.sort((a: any, b: any) => {
-        if (fechas.some(f => f === by)) return ordenFecha(a, b, orden);
-        else if (isNaN(b[by])) return ordenString(a, b, orden);
-        else return ordenNumero(a, b, orden);
+        if (fechas.some(f => f === by)) return ordenFecha(a[by], b[by], orden);
+        else if (isNaN(b[by])) return ordenString(a[by], b[by], orden);
+        else return ordenNumero(a[by], b[by], orden);
 
     })
 }
@@ -40,7 +40,7 @@ export function filtro<l>(itens: any[], value: number, Label: l) {
     return itens;
 }
 export function indexOfCallback<p = any>(arr: p[], callback: (a: any) => boolean, startIndex = 0) {
-    for (var i = startIndex; i < arr.length; i++) {
+    for (let i = startIndex; i < arr.length; i++) {
         if (callback(arr[i])) {
             return i;
         }

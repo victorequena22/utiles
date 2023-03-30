@@ -3,7 +3,7 @@ import { formatoFecha, zfill } from "./Formatos";
 export function busqueda(itens: any[], encontar: string, bucarLabel: string[], fechas: string[] = []) {
     if (encontar !== "") {
         return itens.filter(iten => {
-            let en = encontar.split(" "), pasa = false;
+            let en = encontar.toUpperCase().split(" "), pasa = false;
             bucarLabel.forEach(label => {
                 let considencias = 0;
                 en.forEach(e => {

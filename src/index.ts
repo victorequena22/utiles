@@ -4,7 +4,7 @@ import { filtro, busqueda, indexOfCallback, ordenar, actualizarLista } from './L
 import { portapapeles, focusId } from './Acciones';
 import { ToRGB, getMes } from './Converciones';
 import { semaforo } from './Semaforo';
-import { sha256 } from './encoders';
+import { sha256 } from './Encoders';
 export {
     MobileUserAgent, buscarTexto, compareOBJ, inRangeFechas, ordenFecha, ordenNumero, ordenString,
     zfill, numberFormat, focusId, timeFormat, formatoFecha, formatoHora, solicitud, fechaToNumber, sha256,

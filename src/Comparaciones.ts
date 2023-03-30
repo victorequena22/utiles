@@ -16,7 +16,7 @@ export const ordenFecha = (a: string, b: string, orden: "desc" | "asc") => {
     return ordenNumero(fa, fb, orden);
 };
 export const buscarTexto = (a: string, b: string) => {
-    return (a.toUpperCase().indexOf(b) > -1);
+    return (a.toUpperCase().indexOf(b.toUpperCase()) > -1);
 };
 export function MobileUserAgent() {
     if (navigator.userAgent.match(/Android/i)

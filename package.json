@@ -1,6 +1,6 @@
 {
   "name": "@victorequena22/utiles",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Utilidades para mi uso que pongo a dispocion",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

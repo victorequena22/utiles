@@ -1,6 +1,6 @@
 {
   "name": "@victorequena22/utiles",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "Utilidades para mi uso que pongo a dispocion",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -36,5 +36,8 @@
   },
   "files": [
     "lib/**/*"
-  ]
+  ],
+  "dependencies": {
+    "dayjs": "^1.11.13"
+  }
 }

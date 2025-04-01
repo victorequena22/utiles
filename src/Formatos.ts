@@ -1,3 +1,5 @@
+import dayjs = require("dayjs");
+
 export function zfill(numero: number, width = 6) {
     const numberOutput = Math.abs(numero); /* Valor absoluto del número */
     const length = numero.toString().length; /* Largo del número */
@@ -40,63 +42,26 @@ export function timeFormatAtHora(s2: number, decimal = 2) {
     return `${zfill(h, 2)}:${zfill(m - (h * 60), 2)}:${zfill(s - (m * 60), 2)}${(s2 - s).toFixed(decimal).replace("0", "")}`;
 }
 export function formatoFecha(fecha: string) {
-    const date = new Date(fecha);
-    const año = date.getFullYear();
-    const mes = date.getMonth() + 1;
-    const dia = date.getDate() + 1;
-    return zfill(dia, 2) + "/" + zfill(mes, 2) + "/" + año;
+    return dayjs(fecha).format('DD/MM/YYYY');
 }
 export function formatoHora(fecha?: string) {
-    const date = fecha ? new Date(fecha) : new Date();
-    const minuto = date.getMinutes();
-    const segundo = date.getSeconds();
-    let hora = date.getHours();
-    let turno = " AM";
-    if (hora >= 12) { turno = " PM"; }
-    if (hora > 12) { hora = hora - 12; }
-    if (hora === 0) { hora = hora + 12; }
-    return zfill(hora, 2) + ":" + zfill(minuto, 2) + ":" + zfill(segundo, 2) + turno;
+    return dayjs(fecha).format('hh:mm a');
 }
 export function solicitud() {
-    const date = new Date();
-    const año = date.getFullYear();
-    const mes = date.getMonth() + 1;
-    const dia = date.getDate();
-    const hora = date.getHours();
-    const minuto = date.getMinutes();
-    const segundo = date.getSeconds();
-    return `${año}-${mes}-${dia}/${hora}:${minuto}:${segundo}`;
+    return dayjs().format('YYYY-MM-DD/HH:mm:ss');
 }
 export function fechaToNumber(fecha?: string) {
-    const date = fecha ? new Date(fecha) : new Date();
-    const año = date.getFullYear();
-    const mes = date.getMonth() + 1;
-    const dia = date.getDate() + 1;
-    const hora = date.getHours();
-    const minuto = date.getMinutes();
-    const segundo = date.getSeconds();
-    return parseInt(año + zfill(mes, 2) + zfill(dia, 2) + zfill(hora, 2) + zfill(minuto, 2) + zfill(segundo, 2));
+    return parseInt(dayjs(fecha).format('YYYYMMDDHHmmss'))
 }
 export function diaToNumber(fecha?: string) {
-    const date = fecha ? new Date(fecha) : new Date();
-    const año = date.getFullYear();
-    const mes = date.getMonth() + 1;
-    const dia = date.getDate() + 1;
-    return parseInt(año + zfill(mes, 2) + zfill(dia, 2));
+    return parseInt(dayjs(fecha).format('YYYYMMDD'))
 }
-
-
 export function getSegundos(fecha?: string) {
-    const date = fecha ? new Date(fecha) : new Date();
-    const hora = date.getHours();
-    const minuto = date.getMinutes();
-    const segundo = date.getSeconds();
+    const hora = parseInt(dayjs(fecha).format('HH'));
+    const minuto = parseInt(dayjs(fecha).format('mm'));
+    const segundo = parseInt(dayjs(fecha).format('ss'));
     return hora * 3600 + minuto * 60 + segundo;
 }
 export function parseDia(fecha?: string) {
-    const date = fecha ? new Date(fecha) : new Date();
-    const año = date.getFullYear();
-    const mes = date.getMonth();
-    const dia = date.getDate();
-    return `${zfill(dia, 2)}-${zfill(mes, 2)}-${zfill(año, 2)}`;
+    return dayjs(fecha).format('DD-MM-YYYY');
 }
